@@ -1,11 +1,11 @@
 import React from "react";
-import * as S from "./style";
-import useNavigator from "../../Hooks/useNavigator";
+import * as S from "../style";
+import useNavigator from "../../../Hooks/useNavigator";
 
 const Header = () => {
-  const [navigateToDestination] = useNavigator("/");
+  const [navigateToDestination] = useNavigator();
   const redirectHomePadge = () => {
-    navigateToDestination();
+    navigateToDestination("/");
   };
 
   return (

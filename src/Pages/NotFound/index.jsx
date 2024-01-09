@@ -1,7 +1,7 @@
 import React from "react";
 
-const NotFound = () => {
-  return <div>NotFound</div>;
+const ServerError = () => {
+  return <div>ServerError</div>;
 };
 
-export default NotFound;
+export default ServerError;

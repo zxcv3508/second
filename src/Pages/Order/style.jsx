@@ -5,7 +5,8 @@ import * as color from "../../GlobalStyle/color";
 const orderWidth = 350;
 const orderHeaderHeight = 57;
 const orderFooterHeight = 170;
-const bodyPadding = 15;
+const bodyPadding = 10;
+const listBodyElemetSize = 62;
 
 // 페이지
 export const OrderPageContainer = styled.div`
@@ -19,7 +20,7 @@ export const OrderPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  // justify-content: space-between;
+  justify-content: space-between;
   background: ${color.white};
   height: 100%;
   width: ${orderWidth}px;
@@ -29,7 +30,7 @@ export const OrderPageWrapper = styled.div`
 export const OrderHeaderContainer = styled.div`
   position: flex;
   background: ${color.black};
-  width: ${orderWidth + 2}px;
+  width: ${orderWidth}px;
   height: ${orderHeaderHeight}px;
   box-shadow: 0px 6px 6px -5px gray;
 `;
@@ -55,7 +56,7 @@ export const OrderBodyContainer = styled.div`
 
   width: 100%;
   height: calc(
-    100% - ${orderHeaderHeight + orderFooterHeight + 2 * bodyPadding}px
+    100% - ${orderHeaderHeight + orderFooterHeight}px
   );
   
   overflow-x: hidden;
@@ -66,12 +67,63 @@ export const OrderBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 
-  width: ${orderWidth - bodyPadding * 2}px;
-  padding-top: ${bodyPadding}px;
-  padding-bottom: ${bodyPadding}px;
+  width: ${orderWidth}px;
+  // padding: ${bodyPadding}px;
 
   border: solid 1px;
+`;
+
+// 대기 바디
+export const SpannigBodyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 50px;
+  position: relative;
+  top: calc(50% - 25px);
+`;
+
+// 리스트 바디
+export const ListBodyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+`;
+
+// 리스트 바디 요소
+export const ListBodyElementContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+  height: 100%;
+  margin: 10px;
+
+  border-radius: 10px;
+  border: solid 1px ${color.gray};
+`;
+
+export const ListBodyElementImg = styled.div`
+  width: ${listBodyElemetSize}px;
+  height: ${listBodyElemetSize}px;
+  margin: 10px 10px 10px 10px;
+  background: ${color.gray};
+`;
+
+export const ListBodyElementWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: ${listBodyElemetSize}px;
+  margin-left: 5px;
+
+  // align-items: center;
 `;
 
 // 푸터
@@ -81,5 +133,5 @@ export const OrderFooterContainer = styled.div`
   height: ${orderFooterHeight}px;
 
   border-radius: 20px 20px 0px 0px;
-  box-shadow: 0px -6px 6px -5px gray;
+  box-shadow: 0px -6px 6px -5px ${color.gray};
 `;

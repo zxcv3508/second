@@ -3,9 +3,9 @@ import * as S from "./style";
 import useNavigator from "../../Hooks/useNavigator";
 
 const OrderButton = () => {
-  const [navigateToDestination] = useNavigator("/order");
+  const [navigateToDestination] = useNavigator();
   const redirectOderPadge = () => {
-    navigateToDestination();
+    navigateToDestination("/order");
   };
 
   return (
