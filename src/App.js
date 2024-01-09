@@ -1,9 +1,9 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home from "./Home/index";
-import Order from "./Order/index";
-import Complete from "./Complete/index";
-import Error from "./Error/index";
-import NotFound from "./NotFound/index";
+import Home from "./Pages/Home/index";
+import Order from "./Pages/Order/index";
+import Complete from "./Pages/Complete/index";
+import Error from "./Pages/Error/index";
+import NotFound from "./Pages/NotFound/index";
 
 function App() {
   return (
