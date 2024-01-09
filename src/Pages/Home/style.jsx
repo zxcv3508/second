@@ -10,6 +10,7 @@ const elementsHeight = orderButtonHeight + logoIMGHeight + elementsMargin;
 export const HomePageContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 export const HomePageElementsContainer = styled.div`
