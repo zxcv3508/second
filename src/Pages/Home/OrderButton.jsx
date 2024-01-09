@@ -1,9 +1,11 @@
 import React from "react";
 import * as S from "./style";
+import useNavigator from "../../Hooks/useNavigator";
 
 const OrderButton = () => {
+  const [navigateToDestination] = useNavigator("order");
   const redirectOderPadge = () => {
-    console.log("on click");
+    navigateToDestination();
   };
 
   return (
