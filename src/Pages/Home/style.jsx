@@ -40,9 +40,10 @@ export const OrderButton = styled.div`
   border-radius: 20px;
   border: 0px;
 
-  ${font.normalBody};
+  ${font.normalThickBody};
 
   &:hover {
     background-color: ${color.themeColor};
+    color: ${color.white};
   }
 `;

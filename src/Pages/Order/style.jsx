@@ -122,7 +122,7 @@ export const ListBodyElementWrapper = styled.div`
   justify-content: space-between;
 
   height: ${listBodyElemetSize}px;
-  width: 100%;
+  width: calc(90% - ${listBodyElemetSize}px);
   margin-left: 5px;
   margin-right: 10px;
 
@@ -139,8 +139,8 @@ export const ListBodyElementName = styled.div`
 
 export const ListBodyElementEvent = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   width: 53px;
   height: 23px;
@@ -165,17 +165,71 @@ export const ListBodyElementCountContainer = styled.div`
 `;
 
 export const ListBodyElementCountWrapper = styled.div`
-  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 23px;
 `;
 
-export const ListBodyElementPrice = styled.div``;
+export const ListBodyElementPrice = styled.div`
+  ${font.normalBody}
+`;
 
 // 푸터
 export const OrderFooterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: ${color.white};
   width: ${orderWidth}px;
   height: ${orderFooterHeight}px;
 
   border-radius: 20px 20px 0px 0px;
   box-shadow: 0px -6px 6px -5px ${color.gray};
+`;
+
+export const OrderFooterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  // border: solid 1px black;
+`;
+
+export const OrderCountAndPrice = styled.div`
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+
+  width: 100%;
+  height: 52px;
+  // border: solid 1px black;
+`;
+export const OrderCountAndPriceWrapper = styled.div`
+  ${font.normalBody}
+  text-align: right;
+`;
+
+export const OrderFooterButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 48px;
+
+  color: ${color.white};
+  background-color: ${color.black};
+  border: none;
+
+  ${font.normalBody};
+
+  :disabled {
+    background: ${color.gray};
+    color: ${color.white};
+  }
 `;
