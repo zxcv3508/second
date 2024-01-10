@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import * as color from "../../GlobalStyle/color";
+import * as font from "../../GlobalStyle/font";
 // import * as font from "../../GlobalStyle/font";
 
 const orderWidth = 350;
@@ -121,10 +122,53 @@ export const ListBodyElementWrapper = styled.div`
   justify-content: space-between;
 
   height: ${listBodyElemetSize}px;
+  width: 100%;
   margin-left: 5px;
+  margin-right: 10px;
 
   // align-items: center;
 `;
+
+export const ListBodyElementFisrtLine = styled.div`
+  display: flex;
+  width: 100%;
+`;
+export const ListBodyElementName = styled.div`
+  ${font.normalBody}
+`;
+
+export const ListBodyElementEvent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 53px;
+  height: 23px;
+  margin-left: 15px;
+
+  background-color: ${color.themeColor};
+  border-radius: 10px;
+
+  ${font.smallNormalBody};
+  color: ${color.white};
+`;
+
+export const ListBodyElementSecondLine = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+`;
+
+export const ListBodyElementCountContainer = styled.div`
+  display: flex;
+`;
+
+export const ListBodyElementCountWrapper = styled.div`
+  width: 20px;
+`;
+
+export const ListBodyElementPrice = styled.div``;
 
 // 푸터
 export const OrderFooterContainer = styled.div`

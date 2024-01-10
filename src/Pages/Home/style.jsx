@@ -40,7 +40,7 @@ export const OrderButton = styled.div`
   border-radius: 20px;
   border: 0px;
 
-  font: ${font.normalBody};
+  ${font.normalBody};
 
   &:hover {
     background-color: ${color.themeColor};
