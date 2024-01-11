@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import * as S from "./style";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { shoppingCartState } from "../../../../../GlobalState/shoppingCart";
 import { countAndPriceState } from "../../../../../GlobalState/countAndPrice";
 import ListBodyElement from "./ListElement";
@@ -9,14 +9,16 @@ import ListBodyElement from "./ListElement";
 // 하위 컴포넌트인 ListBodyElement는 memo로 감싸서 props값이 변경될 경우만 렌더
 // useCallback활용해서 props로 넘어갈때 함수가 변경됨을 방지
 const ListBody = ({ itemList }) => {
-  const [shoppingCart, setShoppingCart] = useRecoilState(shoppingCartState);
+  const shoppingCart = useRecoilValue(shoppingCartState);
+  const setShoppingCart = useSetRecoilState(shoppingCartState);
   const setCountAndPrice = useSetRecoilState(countAndPriceState);
 
   const onSetShoppingCart = useCallback((id, nextCount) => {
-    const updatedCart = new Map(shoppingCart);
-
-    updatedCart.set(id, nextCount);
-    setShoppingCart(updatedCart);
+    setShoppingCart((prev) => {
+      const updatedCart = new Map(prev);
+      updatedCart.set(id, nextCount);
+      return updatedCart;
+    });
   }, []);
 
   const onSetCountAndPrice = useCallback((isIncrease, itemPrice) => {
