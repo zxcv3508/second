@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import * as S from "./style";
-import useNavigator from "../../Hooks/useNavigator";
-
+import { useNavigate } from "react-router-dom";
 const Error = () => {
-  const [navigateToDestination] = useNavigator();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigateToDestination("/order");
+      navigate("/order");
     }, 3000);
 
     return () => clearTimeout(timeout);

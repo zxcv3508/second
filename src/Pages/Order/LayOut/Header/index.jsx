@@ -1,12 +1,12 @@
 import React from "react";
 import * as S from "./style";
-import useNavigator from "../../../../Hooks/useNavigator";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const [navigateToDestination] = useNavigator();
+  const navigate = useNavigate();
 
   const redirectHomePadge = () => {
-    navigateToDestination("/");
+    navigate("/");
   };
 
   return (

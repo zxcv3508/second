@@ -92,6 +92,17 @@
       ],
       "totalCount": 3,
       "totalPrice": 240000
+    },
+    {
+      "id": "54a7",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
     }
   ]
 }

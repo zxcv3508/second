@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as S from "./style";
+import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { shoppingCartState } from "../../../../GlobalState/shoppingCart";
-import useNavigator from "../../../../Hooks/useNavigator";
 import getAPI from "../../../../API/getAPI";
 import SpannigBody from "./SpanningBody";
 import ListBody from "./ListBody";
@@ -14,7 +14,7 @@ const Body = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
   const setShoppingCart = useSetRecoilState(shoppingCartState);
-  const [navigateToDestination] = useNavigator();
+  const navigate = useNavigate();
 
   const initShoppingCart = (itemList) => {
     var tmpShoppingCart = new Map();
@@ -34,7 +34,7 @@ const Body = () => {
   const onError = (error) => {
     setIsLoading(false);
     alert(`server error:\n${error}`);
-    navigateToDestination("/");
+    navigate("/");
   };
 
   useEffect(() => {
