@@ -6,6 +6,7 @@ const ListBodyElement = React.memo(
   ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
     const limitCount = 999;
 
+    console.log("item", item);
     const increaseItemCount = () => {
       if (count + 1 > limitCount) {
         alert(`주문할 수 있는 최대 수량은 ${limitCount}개 입니다.`);

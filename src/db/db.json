@@ -77,5 +77,143 @@
       "materialType": 1,
       "price": 80000
     }
+  ],
+  "purchaselog": [
+    {
+      "purchaseItems": [
+        {
+          "productId": "47342-3",
+          "purchaseCount": 2
+        },
+        {
+          "productId": "12345-6",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 3,
+      "totalPrice": 240000
+    },
+    {
+      "id": "2ed8",
+      "purchaseItems": [
+        {},
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "c8db",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "27ff",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "e857",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "039d",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "b334",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "310f",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "777e",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "8254",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "e362",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 1
+        }
+      ],
+      "totalCount": 1,
+      "totalPrice": 100000
+    },
+    {
+      "id": "83e8",
+      "purchaseItems": [
+        {
+          "productId": "39843-2",
+          "purchaseCount": 5
+        }
+      ],
+      "totalCount": 5,
+      "totalPrice": 500000
+    }
   ]
 }

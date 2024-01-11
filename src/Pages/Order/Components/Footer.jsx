@@ -1,15 +1,52 @@
 import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 import { countAndPriceState } from "../../../GlobalState/countAndPrice";
+import { shoppingCartState } from "../../../GlobalState/shoppingCart";
+import postAPI from "../../../API/postAPI";
+import useNavigator from "../../../Hooks/useNavigator";
 import * as S from "../style";
 
 const Footer = () => {
   const countAndPrice = useRecoilValue(countAndPriceState);
+  const shoppingCart = useRecoilValue(shoppingCartState);
   const [isLoading, setIsLoading] = useState(false);
+  const [navigateToDestination] = useNavigator();
+
+  const onSuccess = () => {
+    setIsLoading(false);
+    navigateToDestination("/complete");
+  };
+
+  const onError = () => {
+    navigateToDestination("/error");
+  };
+
+  const makePurchaseForm = () => {
+    const body = {
+      purchaseItems: [],
+      totalCount: countAndPrice[0],
+      totalPrice: countAndPrice[1],
+    };
+
+    shoppingCart.forEach((purchaseCount, productId) => {
+      if (purchaseCount > 0) {
+        body.purchaseItems.push({
+          productId,
+          purchaseCount,
+        });
+      }
+    });
+    return body;
+  };
 
   const requestPurchase = () => {
     setIsLoading(true);
-    
+    postAPI(
+      "http://localhost:3000/purchaselog",
+      makePurchaseForm(),
+      onSuccess,
+      onError
+    );
   };
 
   return (
