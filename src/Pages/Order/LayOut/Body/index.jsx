@@ -10,7 +10,7 @@ import ListBody from "./ListBody";
 const Body = () => {
   const getURL = process.env.REACT_APP_NOTION_TOKEN
     ? process.env.REACT_APP_NOTION_TOKEN
-    : "http://localhost:3000/items";
+    : "http://localhost:3001/items";
   const [isLoading, setIsLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
   const setShoppingCart = useSetRecoilState(shoppingCartState);

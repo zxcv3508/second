@@ -8,7 +8,7 @@ import useNavigator from "../../../../../Hooks/useNavigator";
 const OrderButton = ({ countAndPrice, setCountAndPrice }) => {
   const postURL = process.env.REACT_APP_POST_URL
     ? process.env.REACT_APP_POST_URL
-    : "http://localhost:3000/purchaselog";
+    : "http://localhost:3001/purchaselog";
   const shoppingCart = useRecoilValue(shoppingCartState);
   const [isLoading, setIsLoading] = useState(false);
   const [navigateToDestination] = useNavigator();
