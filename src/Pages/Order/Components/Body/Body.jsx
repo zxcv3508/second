@@ -1,18 +1,21 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { shoppingCartState } from "../../../../GlobalState/shoppingCart";
+import { countAndPriceState } from "../../../../GlobalState/countAndPrice";
 import * as S from "../../style";
 import useNavigator from "../../../../Hooks/useNavigator";
 import getAPI from "../../../../API/getAPI";
 import SpannigBody from "./SpanningBody";
-import BodyList from "./ListBody";
+import ListBody from "./ListBody";
 
 const Body = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [itemList, setItemList] = useState([]);
-  const setShoppingCart = useSetRecoilState(shoppingCartState);
+  const [shoppingCart, setShoppingCart] = useRecoilState(shoppingCartState);
+  const [countAndPrice, setCountAndPriceState] =
+    useRecoilState(countAndPriceState);
   const [navigateToDestination] = useNavigator();
 
   const initShoppingCart = (itemList) => {
@@ -24,11 +27,30 @@ const Body = () => {
     setShoppingCart(tmpShoppingCart);
   };
 
+  const getPrevShoppingInfo = () => {
+    const prevShoppingCart = localStorage.getItem("shoppingCart");
+    const prevCountAndPrice = localStorage.getItem("countAndPrice");
+
+    if (prevCountAndPrice && prevCountAndPrice) {
+      const confirmResult = window.confirm(
+        "기존 장바구니 기록이 있습니다.\n가져오시겠습니까?"
+      );
+      if (confirmResult) {
+        setShoppingCart(new Map(JSON.parse(prevShoppingCart)));
+        setCountAndPriceState(JSON.parse(prevCountAndPrice));
+      } else {
+        localStorage.removeItem("shoppingCart");
+        localStorage.removeItem("countAndPrice");
+      }
+    }
+  };
+
   const onSuccess = (data) => {
     setIsLoading(false);
     setIsError(false);
     setItemList(data);
     initShoppingCart(data);
+    getPrevShoppingInfo();
   };
 
   const onError = (error) => {
@@ -45,12 +67,13 @@ const Body = () => {
     return (
       <S.OrderBodyContainer>
         <S.OrderBodyWrapper>
+          서버 에러
           <div
             onClick={() => {
               navigateToDestination("/");
             }}
           >
-            테스트 서버와 통신이 안되네요! 저를 눌러서 홈으로 다녀와 볼까요..?
+            홈으로 가기
           </div>
         </S.OrderBodyWrapper>
       </S.OrderBodyContainer>
@@ -60,7 +83,7 @@ const Body = () => {
   return (
     <S.OrderBodyContainer>
       <S.OrderBodyWrapper>
-        {isLoading ? <SpannigBody /> : <BodyList itemList={itemList} />}
+        {isLoading ? <SpannigBody /> : <ListBody itemList={itemList} />}
       </S.OrderBodyWrapper>
     </S.OrderBodyContainer>
   );

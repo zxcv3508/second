@@ -1,7 +1,7 @@
 import React from "react";
 
 const ServerError = () => {
-  return <div>ServerError</div>;
+  return <div style={{ background: "white", height: "100%" }}>ServerError</div>;
 };
 
 export default ServerError;
