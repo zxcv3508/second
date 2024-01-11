@@ -35,6 +35,7 @@
 ```
 
 ### .env 파일 활용
+3001포트를 이미 사용 중일 경우, 최대 개수 테스트 등을 위한 환경변수
 ```
 REACT_APP_GET_URL = http://localhost:3001/items
 REACT_APP_POST_URL = http://localhost:3001/purchaselog
@@ -42,3 +43,4 @@ REACT_APP_LIMIT_COUNT = 999
 ```
 기본 세팅은 위와 같고 필요시 변경 후 반드시 재시작 필요
 환경변수 제거시 위와 같은 기본 세팅으로 실행됨
+
