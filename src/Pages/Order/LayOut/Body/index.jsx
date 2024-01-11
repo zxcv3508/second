@@ -8,6 +8,9 @@ import SpannigBody from "./SpanningBody";
 import ListBody from "./ListBody";
 
 const Body = () => {
+  const getURL = process.env.REACT_APP_NOTION_TOKEN
+    ? process.env.REACT_APP_NOTION_TOKEN
+    : "http://localhost:3000/items";
   const [isLoading, setIsLoading] = useState(true);
   const [itemList, setItemList] = useState([]);
   const setShoppingCart = useSetRecoilState(shoppingCartState);
@@ -35,7 +38,7 @@ const Body = () => {
   };
 
   useEffect(() => {
-    getAPI("http://localhost:3000/items", onSuccess, onError);
+    getAPI(getURL, onSuccess, onError);
   }, []);
 
   return (

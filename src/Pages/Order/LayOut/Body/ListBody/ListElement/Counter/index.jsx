@@ -2,7 +2,9 @@ import React from "react";
 import * as S from "./style";
 
 const Counter = ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
-  const limitCount = 999;
+  const limitCount = process.env.REACT_APP_LIMIT_COUNT
+    ? process.env.REACT_APP_LIMIT_COUNT
+    : 999;
 
   const increaseItemCount = () => {
     if (count + 1 > limitCount) {
