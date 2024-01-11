@@ -5,6 +5,9 @@ import { useRecoilValue } from "recoil";
 import { shoppingCartState } from "../../../../../GlobalState/shoppingCart";
 import postAPI from "../../../../../API/postAPI";
 
+// 로딩 중인지, 주문 가능한지로 비활성화 여부 판단
+// 주문하기 클릭시 makePurchaseForm로 POST 바디 생성 (전역 상태 shoppingCart, countAndPrice 활용)
+// 주문 성공, 실패시 해당 페이지로 이동
 const OrderButton = ({ countAndPrice, setCountAndPrice }) => {
   const postURL = process.env.REACT_APP_POST_URL
     ? process.env.REACT_APP_POST_URL
@@ -20,6 +23,7 @@ const OrderButton = ({ countAndPrice, setCountAndPrice }) => {
   };
 
   const onError = () => {
+    setIsLoading(false);
     navigate("/error");
   };
 

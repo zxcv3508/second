@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./style";
 
+// 음수와 최대 수량 넘어갈 경우를 경고로 알림
 const Counter = ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
   const limitCount = process.env.REACT_APP_LIMIT_COUNT
     ? process.env.REACT_APP_LIMIT_COUNT

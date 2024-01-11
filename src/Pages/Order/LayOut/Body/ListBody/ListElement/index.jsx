@@ -3,6 +3,7 @@ import * as S from "./style";
 import * as color from "../../../../../../GlobalStyle/color";
 import Counter from "./Counter";
 
+// 메모로 감싸서 props 값이 변경 안되면 리렌더 하지 않음
 const ListBodyElement = React.memo(
   ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
     return (

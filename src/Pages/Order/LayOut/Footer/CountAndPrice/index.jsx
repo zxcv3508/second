@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./style";
 
+// 상위 페이지에서 받아온 전역 상태 countAndPrice로 현재 개수와 가격 표시
 const CountAndPrice = ({ countAndPrice }) => {
   return (
     <S.Container>

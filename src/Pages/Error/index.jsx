@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import * as S from "./style";
 import { useNavigate } from "react-router-dom";
+
+// setTimeout로 3초 뒤에 주문 페이지로 네비게이트
 const Error = () => {
   const navigate = useNavigate();
 
