@@ -5,8 +5,6 @@ import useNavigator from "../../Hooks/useNavigator";
 const Complete = () => {
   const [navigateToDestination] = useNavigator();
 
-  localStorage.removeItem("shoppingCart");
-  localStorage.removeItem("countAndPrice");
   useEffect(() => {
     const timeout = setTimeout(() => {
       navigateToDestination("/order");

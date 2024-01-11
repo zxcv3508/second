@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { countAndPriceState } from "../../../GlobalState/countAndPrice";
 import { shoppingCartState } from "../../../GlobalState/shoppingCart";
 import postAPI from "../../../API/postAPI";
@@ -7,13 +7,14 @@ import useNavigator from "../../../Hooks/useNavigator";
 import * as S from "../style";
 
 const Footer = () => {
-  const countAndPrice = useRecoilValue(countAndPriceState);
   const shoppingCart = useRecoilValue(shoppingCartState);
+  const [countAndPrice, setCountAndPrice] = useRecoilState(countAndPriceState);
   const [isLoading, setIsLoading] = useState(false);
   const [navigateToDestination] = useNavigator();
 
   const onSuccess = () => {
     setIsLoading(false);
+    setCountAndPrice([0, 0]);
     navigateToDestination("/complete");
   };
 

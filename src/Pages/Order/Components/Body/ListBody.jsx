@@ -14,7 +14,6 @@ const ListBody = ({ itemList }) => {
 
     updatedCart.set(id, nextCount);
     setShoppingCart(updatedCart);
-    localStorage.setItem("shoppingCart", JSON.stringify([...updatedCart]));
   }, []);
 
   const onSetCountAndPrice = useCallback((id, isIncrease, itemPrice) => {
@@ -24,10 +23,6 @@ const ListBody = ({ itemList }) => {
       const nextCount = prev[0] + sign;
       const nextPrice = prev[1] + sign * itemPrice;
 
-      localStorage.setItem(
-        "countAndPrice",
-        JSON.stringify([nextCount, nextPrice])
-      );
       return [nextCount, nextPrice];
     });
   }, []);

@@ -1,8 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { shoppingCartState } from "../../../../GlobalState/shoppingCart";
-import { countAndPriceState } from "../../../../GlobalState/countAndPrice";
 import * as S from "../../style";
 import useNavigator from "../../../../Hooks/useNavigator";
 import getAPI from "../../../../API/getAPI";
@@ -13,9 +12,7 @@ const Body = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
   const [itemList, setItemList] = useState([]);
-  const [shoppingCart, setShoppingCart] = useRecoilState(shoppingCartState);
-  const [countAndPrice, setCountAndPriceState] =
-    useRecoilState(countAndPriceState);
+  const setShoppingCart = useSetRecoilState(shoppingCartState);
   const [navigateToDestination] = useNavigator();
 
   const initShoppingCart = (itemList) => {
@@ -27,30 +24,11 @@ const Body = () => {
     setShoppingCart(tmpShoppingCart);
   };
 
-  const getPrevShoppingInfo = () => {
-    const prevShoppingCart = localStorage.getItem("shoppingCart");
-    const prevCountAndPrice = localStorage.getItem("countAndPrice");
-
-    if (prevCountAndPrice && prevCountAndPrice) {
-      const confirmResult = window.confirm(
-        "기존 장바구니 기록이 있습니다.\n가져오시겠습니까?"
-      );
-      if (confirmResult) {
-        setShoppingCart(new Map(JSON.parse(prevShoppingCart)));
-        setCountAndPriceState(JSON.parse(prevCountAndPrice));
-      } else {
-        localStorage.removeItem("shoppingCart");
-        localStorage.removeItem("countAndPrice");
-      }
-    }
-  };
-
   const onSuccess = (data) => {
     setIsLoading(false);
     setIsError(false);
     setItemList(data);
     initShoppingCart(data);
-    getPrevShoppingInfo();
   };
 
   const onError = (error) => {
