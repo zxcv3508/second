@@ -12,7 +12,7 @@ const Counter = ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
       alert(`주문할 수 있는 최대 수량은 ${limitCount}개 입니다.`);
     } else {
       onSetShoppingCart(item.id, count + 1);
-      onSetCountAndPrice(item.id, true, item.price);
+      onSetCountAndPrice(true, item.price);
     }
   };
 
@@ -21,7 +21,7 @@ const Counter = ({ item, count, onSetShoppingCart, onSetCountAndPrice }) => {
       alert(`수량은 음수가 될 수 없습니다.`);
     } else {
       onSetShoppingCart(item.id, count - 1);
-      onSetCountAndPrice(item.id, false, item.price);
+      onSetCountAndPrice(false, item.price);
     }
   };
   return (
