@@ -1,14 +1,14 @@
 import React from "react";
 import * as S from "./style";
-import OrderButton from "./OrderButton";
+import NavigateButton from "./NavigateButton";
 
 const Home = () => {
   return (
     <S.HomePageContainer>
-      <S.HomePageElementsContainer>
+      <S.HomePageWrapper>
         <S.LogoIMG src="/img/logo-black-medium.png" />
-        <OrderButton />
-      </S.HomePageElementsContainer>
+        <NavigateButton />
+      </S.HomePageWrapper>
     </S.HomePageContainer>
   );
 };

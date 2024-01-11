@@ -1,9 +1,9 @@
 import React, { useCallback } from "react";
-import * as S from "../../style";
+import * as S from "./style";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { shoppingCartState } from "../../../../GlobalState/shoppingCart";
-import { countAndPriceState } from "../../../../GlobalState/countAndPrice";
-import ListBodyElement from "./ListBodyElement";
+import { shoppingCartState } from "../../../../../GlobalState/shoppingCart";
+import { countAndPriceState } from "../../../../../GlobalState/countAndPrice";
+import ListBodyElement from "./ListElement";
 
 const ListBody = ({ itemList }) => {
   const [shoppingCart, setShoppingCart] = useRecoilState(shoppingCartState);
@@ -28,7 +28,7 @@ const ListBody = ({ itemList }) => {
   }, []);
 
   return (
-    <S.ListBodyContainer>
+    <S.Container>
       {itemList.map((item) => {
         return (
           <ListBodyElement
@@ -40,7 +40,7 @@ const ListBody = ({ itemList }) => {
           />
         );
       })}
-    </S.ListBodyContainer>
+    </S.Container>
   );
 };
 

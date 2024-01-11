@@ -1,12 +1,12 @@
 import React from "react";
-import * as S from "../../style";
+import * as S from "./style";
 
 const SpannigBody = () => {
   return (
-    <S.SpannigBodyContainer>
+    <S.Container>
       <span>목록을</span>
       <span>불러오고 있습니다.</span>
-    </S.SpannigBodyContainer>
+    </S.Container>
   );
 };
 export default SpannigBody;

@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./style";
 import useNavigator from "../../Hooks/useNavigator";
 
-const OrderButton = () => {
+const NavigateButton = () => {
   const [navigateToDestination] = useNavigator();
   const redirectOderPadge = () => {
     navigateToDestination("/order");
@@ -13,4 +13,4 @@ const OrderButton = () => {
   );
 };
 
-export default OrderButton;
+export default NavigateButton;

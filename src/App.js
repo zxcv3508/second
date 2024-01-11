@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import Home from "./Pages/Home/index";
-import Order from "./Pages/Order/index";
+import Order from "./Pages/Order";
 import Complete from "./Pages/Complete/index";
 import Error from "./Pages/Error/index";
 import NotFound from "./Pages/NotFound/index";

@@ -13,14 +13,16 @@ export const HomePageContainer = styled.div`
   align-items: center;
 `;
 
-export const HomePageElementsContainer = styled.div`
+export const HomePageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
   position: absolute;
-  height: ${elementsHeight}px;
   top: calc(50% - ${elementsHeight / 2}px);
+  
+  height: ${elementsHeight}px;
 `;
 
 export const LogoIMG = styled.img`
